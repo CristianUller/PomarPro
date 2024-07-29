@@ -36,10 +36,10 @@ body {
 
 .sidebar details {
     margin-bottom: 30px;
-    font-size: 34px;
+    font-size: 32px;
     background-color: rgb(130, 211, 130);
     border:3px #333 solid;
-    
+    font-family: 'Sprite Graffiti', sans-serif;
     display: flex;
     flex-direction: column;
     
@@ -54,12 +54,12 @@ body {
     margin-left: 20px;
     text-shadow:0 0 0.1em rgba(0, 0, 0, 0.5);
     font-style: italic;
-    font-family: 'Franklin Gothic Medium';
+    font-family: 'Sprite Graffiti', sans-serif;
     font-size: 1.6vw;
 }
 
 .sidebar a:hover {
-    color:rgba(8, 241, 210, 0.849);
+    color:rgba(0, 85, 14, 0.849);
     
     
     transition-duration: 1s;
@@ -92,22 +92,23 @@ body {
     width: 117.6%;
 }
 button{
+    
     margin-bottom: 10px;
     font-size: 34px;
     background-color: rgb(150, 226, 131);
     border:3px #333 solid;
 }
 .sidebar button:hover {
-    color:rgba(8, 241, 210, 0.849) ;
+    color:rgba(0, 0, 0, 0.849) ;
     background-color:rgba(72, 255, 0, 0.849) ;
      
      transition-duration: 1s;
      cursor: help;
  }
  .sair{
+    font-size: 2vw;
     margin-left: -8px;
-    font-family: 'Franklin Gothic Medium';
+    font-family: 'Sprite Graffiti', sans-serif;
     text-shadow:0 0 0.1em rgba(0, 0, 0, 0.5);
     font-style: italic;
  }
- 
