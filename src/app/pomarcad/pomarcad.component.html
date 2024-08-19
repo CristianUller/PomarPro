@@ -1,0 +1,53 @@
+
+<app-menu></app-menu>
+<div class="pag">
+    <header>
+        <h1>Administração | Pomar</h1>
+    </header>
+    <form [formGroup]="PomarCad">
+        <mat-form-field appearance="outline" color="primary">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="apelido" type="text">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="primary">
+            <mat-label>coluna</mat-label>
+            <input matInput formControlName="num_coluna" type="number">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="primary">
+            <mat-label>linha</mat-label>
+            <input matInput type="number" formControlName="num_linha">
+        </mat-form-field>
+
+    <div class="detalhes">
+       
+    </div>
+
+    <div class="controles">
+        <button mat-stroked-button [disabled]="PomarCad.enabled" (click)="onIncluir()" color="primary">Incluir</button>
+        <button mat-stroked-button [disabled]="PomarCad.invalid" (click)="onSalvar()">Salvar</button>
+        <button mat-stroked-button [disabled]="PomarCad.disabled" (click)="onCancelar()">Cancelar</button>
+    </div>
+
+
+<div class="relatorio">
+    <h2>Materiais cadastrados</h2>
+    <table>
+        <tr>
+            <th>Ação</th>
+            <th>Nome</th>
+            <th>Coluna</th>
+            <th>Linha</th>
+           
+          
+        </tr>
+        <tr *ngFor="let PomarCad of relatorio">
+            <td><button>Excluir</button></td>
+            <td>{{PomarCad.apelido}}</td>
+            <td>{{PomarCad.num_coluna}}</td>
+            <td>{{PomarCad.num_linha}}</td>
+           
+        </tr>
+    </table>
+</div>
+
+

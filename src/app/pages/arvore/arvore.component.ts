@@ -1,59 +1,55 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UsuarioService } from '../../../service/usuario.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ArvoreService } from '../../services/arvore.service';
+
+
 
 @Component({
-  selector: 'app-cad-usuario',
-  templateUrl: './cad-usuario.component.html',
-  styleUrl: './cad-usuario.component.scss'
+  selector: 'app-arvore',
+  templateUrl: './arvore.component.html',
+  styleUrl: './arvore.component.scss'
 })
-export class CadUsuarioComponent {
-
+export class arvoreComponent {
+  
   constructor(
-    private usuarioService:UsuarioService,
-    private snackbar:MatSnackBar
-    
+ private ArvoreService:ArvoreService,
+ private snackbar:MatSnackBar
     
   ){
-    this.buscaUsuarios()
+    this.buscaarvore()
   }
 
 
-  //inicia o formulario
-  formulario:FormGroup = new FormGroup({ 
+
+  arvore:FormGroup = new FormGroup({ 
     id:new FormControl(null),
-    nome:new FormControl('', Validators.required),
-    sobrenome:new FormControl('',Validators.required ),
-    endereco:new FormControl('',Validators.required),
-    telefone:new FormControl('',Validators.required),
-    email:new FormControl('',Validators.required),
-    login:new FormControl('',Validators.required),
+    defensivo:new FormControl('', Validators.required),
+    fertilizante:new FormControl('', Validators.required),
+    ultima_verif:new FormControl('',Validators.required ),
+    tb_tipo_id:new FormControl('', Validators.required),
+    tb_situacao_id:new FormControl('', Validators.required),
    
 
 
   })
-
-  //metodos dos controles do formulario
   onIncluir(){
-    this.formulario.reset();
-    this.formulario.enable();
+    this.arvore.reset();
+    this.arvore.enable();
   }
 
  
   onSalvar(){
     //guarda as informacoes em uma variavel pra melhorar o processo
-    let info = this.formulario.value;
+    let info = this.arvore.value;
     //verifica se esta inserindo ou alterando com base no valor do id (se for null, esta inserindo, senao esta alterando)
-
-
     if(info.id == null){
       //ira inserir no banco de dados um usuario
-      this.usuarioService.addUsuario(info).subscribe({
+      this.ArvoreService.addarvore(info).subscribe({
         next:(resposta)=>{
           console.log(resposta)
           this.snackbar.open(
-            "Usuário adicionado com sucesso",
+            "arvore adicionado com sucesso",
             "OK",{
               verticalPosition:'top',
               horizontalPosition:'end',
@@ -65,7 +61,7 @@ export class CadUsuarioComponent {
         error:(erro)=>{
           console.log(erro)
           this.snackbar.open(
-            "Erro ao adicionar usuário",
+            "Erro ao adicionar arvore",
             "OK",{
               verticalPosition:'top',
               horizontalPosition:'end',
@@ -80,18 +76,19 @@ export class CadUsuarioComponent {
 
     }
 
+
   }
 
   onCancelar(){
-    this.formulario.reset();
-    this.formulario.disable();
+    this.arvore.reset();
+    this.arvore.disable();
   }
-  // função para buscar as informações e usuários
+
   relatorio:any[] = [];
 
 
-  buscaUsuarios(){
-    this.usuarioService.getUsuarios().subscribe({
+  buscaarvore(){
+    this.ArvoreService.getarvore().subscribe({
       next:(resposta)=>{
         console.log(resposta);
         this.relatorio = resposta.body;
@@ -103,6 +100,7 @@ export class CadUsuarioComponent {
     })
   }
 
+  }
 
 
-}
+

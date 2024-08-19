@@ -15,6 +15,14 @@ import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MaterialComponent } from './pages/material/material.component';
+import { ProdutoComponent } from './pages/produto/produto.component';
+import { PomarCadComponent } from './pomarcad/pomarcad.component';
+import { RotacaoComponent } from './pages/rotacao/rotacao.component';
+import { arvoreComponent } from './pages/arvore/arvore.component';
+import { colheitaComponent } from './pages/colheita/colheita.component';
+import { provideNativeDateAdapter } from '@angular/material/core';
  
 @NgModule({
   declarations: [
@@ -22,7 +30,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     LoginComponent,
     HomeComponent,
     MenuComponent,
-    CadUsuarioComponent
+    CadUsuarioComponent,
+    MaterialComponent,
+    ProdutoComponent,
+    PomarCadComponent,
+    RotacaoComponent,
+    arvoreComponent,
+    colheitaComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,8 +47,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatInputModule,
     MatButtonModule,
     MatSnackBarModule,
+    MatDatepickerModule
   ],
-  providers: [provideHttpClient(), provideAnimationsAsync()],
+  providers: [provideHttpClient(), provideAnimationsAsync(),provideNativeDateAdapter()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
