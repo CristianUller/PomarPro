@@ -6,25 +6,25 @@
     </header>
     <form [formGroup]="arvore">
         <mat-form-field appearance="outline" color="primary">
-            <mat-label>defensivo</mat-label>
+            <mat-label>Defensivo</mat-label>
             <input matInput formControlName="defensivo" type="text">
         </mat-form-field>
         <mat-form-field appearance="outline" color="primary">
-            <mat-label> fertilizante</mat-label>
+            <mat-label>Fertilizante</mat-label>
             <input matInput formControlName="fertilizante" type="text">
         </mat-form-field>
         <mat-form-field appearance="outline" color="primary">
-            <mat-label>ultima_verif</mat-label>
+            <mat-label>Ultima Verificação</mat-label>
             <input matInput formControlName="ultima_verif" [matDatepicker]="ultima_verif">
             <mat-datepicker-toggle matSuffix [for]="ultima_verif"></mat-datepicker-toggle>
             <mat-datepicker #ultima_verif></mat-datepicker>
         </mat-form-field>
         <mat-form-field appearance="outline" color="primary">
-            <mat-label>tb_tipo_id</mat-label>
+            <mat-label>Tipo</mat-label>
             <input matInput formControlName="tb_tipo_id" type="number">
         </mat-form-field>
         <mat-form-field appearance="outline" color="primary">
-            <mat-label> tb_situacao_id</mat-label>
+            <mat-label>Situação</mat-label>
             <input matInput formControlName="tb_situacao_id" type="number">
         </mat-form-field>
         
