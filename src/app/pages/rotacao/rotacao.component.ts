@@ -25,7 +25,7 @@ export class RotacaoComponent {
   rotacao:FormGroup = new FormGroup({ 
     id:new FormControl(null),
    quantidade:new FormControl('', Validators.required),
-    td_tipo_id:new FormControl('', Validators.required),
+    tb_tipo_id:new FormControl('', Validators.required),
     produto:new FormControl('', Validators.required)
 
     

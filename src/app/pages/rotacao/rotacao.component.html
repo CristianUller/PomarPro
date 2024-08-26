@@ -10,17 +10,17 @@
 
         <mat-form-field appearance="outline" color="primary">
             <mat-label>Tipo</mat-label>
-            <input matInput formControlName="td_tipo_id" type="number">
+            <input matInput formControlName="tb_tipo_id" type="number">
         </mat-form-field>
         <div>
         <mat-form-field appearance="outline" color="primary">
             
             <mat-label>Produto</mat-label>
-            <input matInput formControlName="td_tipo_id" type="text">
+            <input matInput formControlName="produto" type="text">
         </mat-form-field>
         <mat-form-field appearance="outline" color="primary">
             <mat-label>Quantidade</mat-label>
-            <input matInput formControlName="td_tipo_id" type="number">
+            <input matInput formControlName="quantidade" type="number">
         </mat-form-field>
       
     </div>
@@ -48,8 +48,8 @@
         </tr>
         <tr *ngFor="let rotacao of relatorio">
             <td><button>Excluir</button></td>
-            <td>{{rotacao.produto}}</td>
-            <td>{{rotacao.tb_tipo_id}}</td>
+            <td>{{rotacao.ds_produto}}</td>
+            <td>{{rotacao.ds_tipo}}</td>
             <td>{{rotacao.quantidade}}</td>
           
            

@@ -26,7 +26,7 @@ export class colheitaComponent {
     id:new FormControl(null),
     quantidade:new FormControl('', Validators.required),
     dt_colheita:new FormControl('', Validators.required),
-    td_arvore_id:new FormControl('',Validators.required ),
+    arvore:new FormControl('',Validators.required ),
     
     
    

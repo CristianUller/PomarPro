@@ -7,7 +7,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { FontAwesomeModule} from '@fortawesome/angular-fontAwesome';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
-import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CadUsuarioComponent } from './pages/usuario/cad-usuario/cad-usuario.component';
@@ -22,7 +21,8 @@ import { PomarCadComponent } from './pomarcad/pomarcad.component';
 import { RotacaoComponent } from './pages/rotacao/rotacao.component';
 import { arvoreComponent } from './pages/arvore/arvore.component';
 import { colheitaComponent } from './pages/colheita/colheita.component';
-import { provideNativeDateAdapter } from '@angular/material/core';
+import { MAT_DATE_LOCALE, provideNativeDateAdapter } from '@angular/material/core';
+import { HomeComponent } from './pages/home/home.component';
  
 @NgModule({
   declarations: [
@@ -49,7 +49,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
     MatSnackBarModule,
     MatDatepickerModule
   ],
-  providers: [provideHttpClient(), provideAnimationsAsync(),provideNativeDateAdapter()],
+  providers: [provideHttpClient(), provideAnimationsAsync(),provideNativeDateAdapter(),{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

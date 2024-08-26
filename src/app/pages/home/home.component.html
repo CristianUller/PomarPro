@@ -1,7 +1,34 @@
-
 <app-menu></app-menu>
 <div class="pag">
+    <header>
+       <div>
+        <h1>teste</h1>
+        <h1>teste2</h1>
+
+        <div class="detalhes">
+       
+        </div>
+    
+
+<div class="relatorio">
+    <h1>Estoque Atual</h1>
+    <table>
+        <tr>
+            <th>Ação</th>
+            <th>Tipo</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+            
+          
+        </tr>
+        <tr *ngFor="let home of relatorio">
+            <td><button>Excluir</button></td>
+           
+            <td>{{home.t_descricao}}</td>
+            <td>{{home.quantidade}}</td>
+            <td>{{home.p_descricao}}</td>
+        </tr>
+       
 
 
- 
-</div>
+
