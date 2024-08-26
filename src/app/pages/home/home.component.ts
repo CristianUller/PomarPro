@@ -17,7 +17,8 @@ export class HomeComponent {
     private snackbar:MatSnackBar
     
   ){
-    this.buscahome()
+    this.buscahome();
+    this.buscahomeS()
   }
 
 
@@ -25,30 +26,64 @@ export class HomeComponent {
   produto:FormGroup = new FormGroup({ 
     id:new FormControl(null),
     
-    produto:new FormControl('', Validators.required),
-    saida:new FormControl('',Validators.required ),
-    entrada:new FormControl('',Validators.required),
-  
+    t_descricao:new FormControl('', Validators.required),
+    quantidade:new FormControl('',Validators.required ),
+    p_descricao:new FormControl('',Validators.required),
+    St_descricao:new FormControl('', Validators.required),
+    Squantidade:new FormControl('',Validators.required ),
+    Sp_descricao:new FormControl('',Validators.required),
     
    
 
 
   })
   
-  relatorio:any[] = [];
+  relatorioE:any[] = [];
+  relatorioS:any[] = [];
 
+  relatorioTotal:any[] = [];
 
   buscahome(){
     this.HomeService.gethome().subscribe({
       next:(resposta)=>{
         console.log(resposta);
-        this.relatorio = resposta.body;
+        this.relatorioE = resposta.body;
+        this.ajustaRelatorio()
     },
     error:(erro)=>{
       console.log(erro)
     }
 
     })
+  }
+
+  buscahomeS(){
+    this.HomeService.gethomeS().subscribe({
+      next:(resposta)=>{
+        console.log(resposta);
+        this.relatorioS = resposta.body;
+        this.ajustaRelatorio()
+    },
+    error:(erro)=>{
+      console.log(erro)
+    }
+
+    })
+  }
+
+  ajustaRelatorio(){
+    this.relatorioE.forEach(e=>{
+      this.relatorioS.forEach(s=>{
+        if(e.id == s.id){
+          this.relatorioTotal.push({
+            id:e.id,
+            descricao:e.p_descricao,
+            quantidade:(e.quantidade - s.quantidade)
+          })
+        }
+      })
+    })
+    console.log(this.relatorioTotal)
   }
 
   }
