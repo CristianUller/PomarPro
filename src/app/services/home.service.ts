@@ -16,4 +16,9 @@ export class HomeService {
     {observe:'response'})
   }
 
+  public gethomeS():Observable<any>{
+    return this.http.get('http://localhost:3000/home/buscaTodosS',
+    {observe:'response'})
+  }
+
 }
