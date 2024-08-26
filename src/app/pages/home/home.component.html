@@ -1,10 +1,10 @@
 <app-menu></app-menu>
 <div class="pag">
     <header>
-       <div>
-        <h1>teste</h1>
-        <h1>teste2</h1>
-
+       <div class="txt">
+        <h1>Bem vindo ao Pomar Pró!</h1>
+        
+       </div>
         <div class="detalhes">
        
         </div>
@@ -15,20 +15,23 @@
     <table>
         <tr>
             <th>Ação</th>
-            <th>Tipo</th>
+            <th>Material</th>
             <th>Quantidade</th>
-            <th>Total</th>
-            
           
         </tr>
-        <tr *ngFor="let home of relatorio">
+        <tr *ngFor="let home of relatorioTotal">
             <td><button>Excluir</button></td>
            
-            <td>{{home.t_descricao}}</td>
+            <td>{{home.descricao}}</td>
             <td>{{home.quantidade}}</td>
-            <td>{{home.p_descricao}}</td>
+            
         </tr>
-       
 
+       
+        <link href="https://fonts.cdnfonts.com/css/sprite-graffiti" rel="stylesheet">
+                 
+        <style>
+            @import url('https://fonts.cdnfonts.com/css/sprite-graffiti');
+    </style>
 
 
